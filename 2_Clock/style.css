@@ -1,0 +1,153 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+body {
+    background-color: cornflowerblue;
+}
+
+.clock {
+    width: 300px;
+    height: 300px;
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 5px;
+    margin: auto;
+    margin-top: 50px;
+    background-color: yellowgreen;
+    position: relative;
+
+}
+
+.hand {
+    position: absolute;
+    background-color: crimson;
+    transition: 0.05s;
+    transform-origin: 0%;
+    transition: 1.05s;
+}
+
+.hour-hand {
+    top: 149px;
+    left: 150px;
+    height: 12px;
+    width: 70px;
+    transform: rotate(20deg);
+}
+
+.minute-hand {
+    top: 153px;
+    left: 150px;
+    height: 6px;
+    width: 90px;
+    transform: rotate(40deg);
+}
+
+.second-hand {
+    top: 154px;
+    left: 150px;
+    height: 4px;
+    width: 140px;
+    transform: rotate(60deg);
+}
+
+.arow {
+    width: 0;
+    height: 0px;
+    position: absolute;
+
+}
+
+.relate {
+    position: relative;
+}
+
+.hour-arow {
+    top: -8px;
+    left: 100%;
+    border: 15px solid yellowgreen;
+    border-left: 15px solid crimson;
+
+}
+
+.minute-arow {
+    top: -3px;
+    left: 100%;
+    border: 6px solid yellowgreen;
+    border-left: 38px solid crimson;
+}
+
+.dot {
+    display: inline-block;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: teal;
+}
+
+.dot-12h {
+    top: 3px;
+    left: 150px;
+}
+
+.dot-1h {
+    top: 23px;
+    left: 225px;
+}
+
+.dot-2h {
+    top: 79px;
+    left: 278px;
+}
+
+.dot-3h {
+    top: 150px;
+    left: 298px;
+}
+
+.dot-4h {
+    top: 219px;
+    left: 278px;
+}
+
+.dot-5h {
+    top: 274px;
+    left: 225px;
+}
+
+.dot-6h {
+    top: 296px;
+    left: 150px;
+}
+
+.dot-7h {
+    top: 277px;
+    left: 70px;
+}
+
+.dot-8h {
+    top: 20px;
+    left: 150px;
+}
+
+.dot-8h {
+    top: 220px;
+    left: 22px;
+}
+
+.dot-9h {
+    top: 150px;
+    left: 6px;
+}
+
+.dot-10h {
+    top: 82px;
+    left: 21px;
+}
+
+.dot-11h {
+    top: 23px;
+    left: 77px;
+}
