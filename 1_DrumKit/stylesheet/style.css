@@ -1,0 +1,45 @@
+body{
+    box-sizing: border-box;
+    background-image:url("../media/background.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container{
+    width: 85%;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 30px;
+}
+.row{
+    display: block;
+    text-align: center;
+}
+.section{
+    display: flex;
+    justify-content: space-around;
+}
+.note {
+    width: 100px;
+    height: 200px;
+    border: 5px solid gray;
+    font-size: 150%;
+    transition: all .07s;
+}
+.light{
+    background-color: #ded7d7;
+
+}
+.dark{
+    background-color: #ad7f7f;
+}
+.lager-text{
+    font-size: 200% !important;
+}
+.transition{
+    width: 120px;
+    border: 5px solid red;
+}
+h1{
+    text-transform: uppercase;
+    color: saddlebrown;
+}
