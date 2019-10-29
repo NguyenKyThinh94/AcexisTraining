@@ -2,6 +2,9 @@
     margin: 0%;
     padding: 0%;
 }
+h1{
+    text-align: center;
+}
 
 body {
     background-color: cornflowerblue;
@@ -19,21 +22,29 @@ body {
     position: relative;
 
 }
-
+.circel{
+    position: absolute;
+    top: 140px;
+    left: 140px;
+    background-color: crimson;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
 .hand {
     position: absolute;
     background-color: crimson;
     transition: 0.05s;
     transform-origin: 0%;
-    transition: 1.05s;
+    transition: 0.05s;
+    transition-timing-function: cubic-bezier(0.08, 0.82, 0.43, 2.19);
 }
 
 .hour-hand {
     top: 149px;
-    left: 150px;
+    left: 155px;
     height: 12px;
     width: 70px;
-    transform: rotate(20deg);
 }
 
 .minute-hand {
@@ -41,7 +52,7 @@ body {
     left: 150px;
     height: 6px;
     width: 90px;
-    transform: rotate(40deg);
+    
 }
 
 .second-hand {
@@ -49,7 +60,7 @@ body {
     left: 150px;
     height: 4px;
     width: 140px;
-    transform: rotate(60deg);
+    
 }
 
 .arow {
@@ -150,4 +161,15 @@ body {
 .dot-11h {
     top: 23px;
     left: 77px;
+}
+.digital-clock-container{  
+    margin-top: 40px;
+    font-size: 300%;
+}
+#digitalClock{ 
+    width: 250px;
+    padding: 5px;
+    margin: auto;
+    border: 2px solid yellowgreen;
+    text-align: center;
 }

@@ -11,18 +11,20 @@
 </head>
 
 <body>
+    <h1>2-Clock with Javascript</h1>
     <div class="clock">
-        <div class="hand hour-hand">
-            <div class="arow hour-arow">
+        <div class="hand hour-hand" id="hourHand" style="transform: rotate(-90deg);">
+            <div class="arow hour-arow" >
             </div>
         </div>
-        <div class="hand minute-hand">
+        <div class="hand minute-hand" id="minuteHand"  style="transform: rotate(40deg);">
             <div class="arow minute-arow">
             </div>
         </div>
-        <div class="hand second-hand">
+        <div class="hand second-hand" id="secondHand"  style="transform: rotate(40deg);">
 
         </div>
+        <div class="circel"></div>
         <ul class="list-time">
             <li class="dot dot-12h"></li>
             <li class="dot dot-1h"></li>
@@ -38,6 +40,11 @@
             <li class="dot dot-11h"></li>
         </ul>
 
+    </div>
+    <div class="digital-clock-container">
+        <p id="digitalClock" >
+
+        </p>
     </div>
 
 </body>
