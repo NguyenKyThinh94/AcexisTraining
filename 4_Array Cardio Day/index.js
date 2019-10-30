@@ -12,12 +12,14 @@ let productList=  [
   ]
 function renderHeaderTable(array){
     let headerTable=document.querySelector('thead');
+    headerTable.innerHTML='';
     let listKey=Object.keys(array[0]);
     let listKeyStr=listKey.map((element) => "<th data-checked='1'>"+element+"<th>");
     headerTable.innerHTML= "<tr>" + listKeyStr.join('')+ "</tr>";
 }
 function renderBodyTable(array){
     let bodyTable=document.querySelector('tbody');
+    bodyTable.innerHTML='';
     rowArray=array.map(function(elementRow){
         let RowArr=Object.values(elementRow);
         let RowArrStr=RowArr.map((element) => "<td>"+element+"<td>");
@@ -26,8 +28,63 @@ function renderBodyTable(array){
     bodyTable.innerHTML=rowArray.join('');
    
 }
+function sortnumber(checked,colum){
+    if(checked){
+        var newproductList=productList.sort(function(a,b){
+          return parseInt(a[colum])-parseInt(b[colum])
+        });
+        renderBodyTable(newproductList);
+        return '0';
+    } else {
+        var newproductList=productList.sort(function(a,b){
+            return parseInt(b[colum])-parseInt(a[colum])
+          });
+          renderBodyTable(newproductList);
+          return '1';
+    }
+    
+}
+function sortLeter(checked,colum){
+    if(checked){
+        let newproductList=productList.sort(function(a,b){
+            let nameA = a[colum].toUpperCase();
+            let nameB = b[colum].toUpperCase(); 
+            if (nameA < nameB) {
+              return -1;
+            }
+            if (nameA > nameB) {
+              return 1;
+            }
+            return 0;
+          });
+        renderBodyTable(newproductList);
+        return '0';
+    } else {
+        let newproductList=productList.sort(function(a,b){
+            let nameA = a[colum].toUpperCase();
+            let nameB = b[colum].toUpperCase(); 
+            if (nameA < nameB) {
+              return 1;
+            }
+            if (nameA > nameB) {
+              return -1;
+            }
+            return 0;
+          });
+          renderBodyTable(newproductList);
+          return '1';
+    }
+    
+}
 function sortList(){
-    console.log(this);
+    let checked=this.dataset.checked=='1';
+    let colum=this.innerHTML;
+    if(colum !== 'productName'){
+        this.dataset.checked= sortnumber(checked,colum);
+    } else{
+        this.dataset.checked= sortLeter(checked,colum);
+    }
+    
 }
 function addEvent(){
     let colum=[...document.querySelectorAll('th')];
