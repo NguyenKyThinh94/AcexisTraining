@@ -1,0 +1,45 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+:root {
+    --padding-left: 100px;
+    --opacity: 0.5;
+    --background-color: #505050;
+}
+h1{
+    text-align: center;
+    margin-top: 50px;
+}
+main{
+    display: flex;
+    width: 85%;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 20px;
+}
+.container-input{
+    width: 30%;
+    margin: 10px;
+}
+.container-ouput{
+    width: 70%;
+    padding: 20px;
+    padding-left: var(--padding-left);
+    background-color: var(--background-color);
+}
+img{
+    opacity:var(--opacity) ;
+    width: 100%;
+}
+.container-flex{
+    display: flex;
+    margin: 10px 0px;
+}
+.width-40{
+    width: 40%;
+}
+.width-60{
+    width: 60%;
+}
