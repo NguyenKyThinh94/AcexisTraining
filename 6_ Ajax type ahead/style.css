@@ -21,7 +21,7 @@
     border-radius: 10px;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 150%;
+    font-size: 120%;
 }
 .list-location{
     margin: auto;
@@ -39,13 +39,13 @@
     color: white;
     
 }
-.upTrapezium{ 
+.upTrapezium{
     transform: skewX(10deg);
-    background-image: linear-gradient(-90deg,#6060a5, #3d414f);
+    background-image: linear-gradient(-90deg,#8b8b8e, #bcc6e6);
 }
 .downTrapezium{
     transform: skewX(-10deg);
-    background-image: linear-gradient(-90deg, #3d414f,#6060a5);
+    background-image: linear-gradient(-90deg, #9aaae0,#636365);
 }
 .population{
     float: right;
