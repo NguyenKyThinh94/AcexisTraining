@@ -86,7 +86,7 @@ function addEvent(){
 function renderArrayTable(array){
     Render.renderHeaderTable(array);
     Render.renderBodyTable(array);
-    addEvent();
+    
 }
 renderArrayTable(productList);
-
+addEvent();
