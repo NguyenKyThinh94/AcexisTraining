@@ -1,3 +1,5 @@
+
+
 let productList=  [
     {itermId: "1", productName: "Bong Den", actualPrice: "53000", discountPrice: "42000", stockAvailable: "111" },
     {itermId: "2", productName: "Day dien", actualPrice: "35000", discountPrice: "35000", stockAvailable: "2" },
@@ -117,3 +119,4 @@ function renderArrayTable(array){
     addEvent();
 }
 renderArrayTable(productList);
+
