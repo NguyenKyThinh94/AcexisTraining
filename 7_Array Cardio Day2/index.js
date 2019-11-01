@@ -1,5 +1,4 @@
 
-
 let productList=  [
     {itermId: "1", productName: "Bong Den", actualPrice: "53000", discountPrice: "42000", stockAvailable: "111" },
     {itermId: "2", productName: "Day dien", actualPrice: "35000", discountPrice: "35000", stockAvailable: "2" },
@@ -12,110 +11,81 @@ let productList=  [
     {itermId: "9", productName: "Den compac", actualPrice: "84000", discountPrice: "81000", stockAvailable: "18" },
     {itermId: "10", productName: "Den chum", actualPrice: "730000", discountPrice: "639000", stockAvailable: "17" },
   ]
-function renderHeaderTable(array){
-    let headerTable=document.querySelector('thead');
-    headerTable.innerHTML='';
-    let listKey=Object.keys(array[0]);
-    listKey=listKey.map((element) => "<th data-checked='1'id='"+element+"'>"+element+"<span class='tooltiptext'>Click to sort</span></th>");
-    let listKeyStr=listKey.join('');
-    console.log("<tr>" + listKeyStr+ "</tr>");
-    
-    headerTable.innerHTML= "<tr>" + listKeyStr+ "</tr>";
-}
-function calculateTotal(array){
-    let totalActua= array.reduce(function(pre,cur){
-        return pre + parseInt(cur.actualPrice)*parseInt(cur.stockAvailable);
-    },0);
-    let totalaDiscount= array.reduce(function(pre,cur){
-        return pre + parseInt(cur.discountPrice)*parseInt(cur.stockAvailable);
-    },0);
-
-    return "<tr>"
-             +"<td colspan='2'>Tổng giá trị bằng(Price*Stock):</td>"
-             +"<td>"+totalActua.toString()+"</td>"
-             +"<td>"+totalaDiscount.toString()+"</td>"
-             +"<td></td>"
-             +"</tr>";
-
-}
-function renderBodyTable(array){
-    let bodyTable=document.querySelector('tbody');
-    bodyTable.innerHTML='';
-    rowArray=array.map(function(elementRow){
-        let RowArr=Object.values(elementRow);
-        let RowArrStr=RowArr.map((element) => "<td>"+element+"</td>");
-        return "<tr>" + RowArrStr.join('')+ "</tr>"
-    });
-    bodyTable.innerHTML=rowArray.join('')+calculateTotal(array);
-   
-}
-function sortnumber(checked,colum){
-    if(checked){
-        var newproductList=productList.sort(function(a,b){
-          return parseInt(a[colum])-parseInt(b[colum])
-        });
-        renderBodyTable(newproductList);
-        return '0';
-    } else {
-        var newproductList=productList.sort(function(a,b){
-            return parseInt(b[colum])-parseInt(a[colum])
-          });
-          renderBodyTable(newproductList);
-          return '1';
-    }
-    
-}
-function sortLeter(checked,colum){
-    if(checked){
-        let newproductList=productList.sort(function(a,b){
-            let nameA = a[colum].toUpperCase();
-            let nameB = b[colum].toUpperCase(); 
-            if (nameA < nameB) {
-              return -1;
-            }
-            if (nameA > nameB) {
-              return 1;
-            }
-            return 0;
-          });
-        renderBodyTable(newproductList);
-        return '0';
-    } else {
-        let newproductList=productList.sort(function(a,b){
-            let nameA = a[colum].toUpperCase();
-            let nameB = b[colum].toUpperCase(); 
-            if (nameA < nameB) {
-              return 1;
-            }
-            if (nameA > nameB) {
-              return -1;
-            }
-            return 0;
-          });
-          renderBodyTable(newproductList);
-          return '1';
-    }
-    
-}
 function sortList(){
     let checked=this.dataset.checked=='1';
     let colum=this.id;
     if(colum !== 'productName'){
-        this.dataset.checked= sortnumber(checked,colum);
+        this.dataset.checked= Render.sortnumber(checked,colum);
     } else{
-        this.dataset.checked= sortLeter(checked,colum);
+        this.dataset.checked= Render.sortLeter(checked,colum);
     }
     
 }
+function searchList(){
+    let input=document.querySelector('input');
+    let select=document.querySelector('select');
+    switch (select.value) {
+        case '1':
+            Search.IdIterm(input.value,productList);            
+            break;
+        case '2':
+            Search.ProductName(input.value,productList);
+            
+            break;
+        case '3':
+            Search.ActualPriceGreaterThan(input.value,productList);
+            
+            break;
+        case '4':
+            Search.ActualPriceLessThan(input.value,productList);
+            
+            break;
+        case '5':
+            Search.ActualPriceEqual(input.value,productList);
+            
+            break;
+        case '6':
+            Search.DiscountPriceGreaterThan(input.value,productList);
+            
+            break;
+        case '7':
+            Search.DiscountPriceLessThan(input.value,productList);
+            
+            break;
+        case '8':
+            Search.DiscountPriceEqual(input.value,productList);
+            
+            break;
+        case '9':
+            Search.StockAvailableGreaterThan(input.value,productList);
+            
+            break;
+        case '10':
+            Search.StockAvailableLessThan(input.value,productList);
+            
+            break;
+        case '11':
+            Search.StockAvailableEqual(input.value,productList);
+            break;
+    
+        default:
+            console.log('111111111111111111111');
+            break;
+    }  
+}
 function addEvent(){
     let colum=[...document.querySelectorAll('th')];
+    let input=document.querySelector('input');
+    let select=document.querySelector('select');
     colum.forEach(element => {
         element.addEventListener('click',sortList);
     });
+    input.addEventListener('keyup',searchList);
+    select.addEventListener('change',searchList );
 }
 function renderArrayTable(array){
-    renderHeaderTable(array);
-    renderBodyTable(array);
+    Render.renderHeaderTable(array);
+    Render.renderBodyTable(array);
     addEvent();
 }
 renderArrayTable(productList);
