@@ -16,4 +16,4 @@ function handelCheckbox(event){
     }    
     lastCheck=this;
 }
-itermCheckboxs.forEach( (itermCheckbox) => itermCheckbox.addEventListener('click',handelCheckbox))
+itermCheckboxs.forEach( (itermCheckbox) => itermCheckbox.addEventListener('click',handelCheckbox));
