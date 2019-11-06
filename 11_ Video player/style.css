@@ -1,10 +1,6 @@
 *{
     box-sizing: border-box;
 }
-:root{
-    --volume: 50%;
-    --playBar:0%;
-}
 button:focus {
     outline:0;
 }
@@ -25,7 +21,7 @@ video{
 }
 .p-absolute{
     position: absolute;
-    background:#a52a2a5c;
+    background: #fdfdfd5c;
     width: 100%;
     padding: 5px;
     bottom:-100px;
@@ -38,46 +34,43 @@ video{
     align-items: center;
     justify-content: space-between;
 }
-.bar{
-    width: 80%;
-    height: 10px;
-    border: none;
-    background-color: gray;
+.inputrange{
+    -webkit-appearance: none; 
+    appearance: none;
+    height: 5px; 
+    border-radius: 2px; 
+    outline: none; 
+    opacity: 0.7; 
+    transition: .2s;
+    background: linear-gradient(to left, #eee, #eee 50%, yellow 50%);
 }
-.played-bar{
-    height: 10px;
-    border: none;
-    border-right: 1px solid red;
-    position: relative;
+.inputrange:hover{
+    opacity: 1;  
 }
+.inputrange::-webkit-slider-thumb {
+    -webkit-appearance: none; 
+    appearance: none;
+    width: 10px; 
+    height: 20px; 
+    border-radius: 5px; 
+    background: yellow; 
+    cursor: pointer; 
+  }
+.inputrange::-moz-range-thumb {
+    width: 5px; 
+    height: 20px; 
+    background: yellow; 
+    border-radius: 5px; 
+    cursor: pointer;
+  } 
 #playerBar{
-    background-color: greenyellow;
-    width: var(--playBar);
-
-}
-.hoverPlayer{
-    position: absolute;
-    width: 0px;
-    height: 0px;
-    padding: 5px 2px;
-    background-color: red;
-    right: -1px;
-    top: 0;
-    transition: 0.07s;
-
-}
-.hoverPlayer:hover{
-    padding: 5px 4px;
-    right: -2px;
+    display: block;
+    width: 85%;
 }
 #previous25s, #playButton, #next25s{
     background: none;
     border: none;
     width: 5%;
-}
-#volumeRanger{
-    background-color: none;
-    width: var(--volume);
 }
 .gange-volume-group{
     width: 50%;
