@@ -1,6 +1,10 @@
 *{
     box-sizing: border-box;
 }
+:root{
+    --volume: 50%;
+    --playBar:0%;
+}
 button:focus {
     outline:0;
 }
@@ -41,14 +45,15 @@ video{
     background-color: gray;
 }
 .played-bar{
-    width: 50%;
     height: 10px;
     border: none;
     border-right: 1px solid red;
     position: relative;
 }
-.played{
+#playerBar{
     background-color: greenyellow;
+    width: var(--playBar);
+
 }
 .hoverPlayer{
     position: absolute;
@@ -72,6 +77,7 @@ video{
 }
 #volumeRanger{
     background-color: none;
+    width: var(--volume);
 }
 .gange-volume-group{
     width: 50%;
