@@ -5,12 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Video Player</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <script src="index.js" defer></script>
 </head>
 <body>
     <div class="container">
-        <video src="video.mp4"></video>
+        <div class="audio p-relative" id="audioGroup">
+                <video src="video.mp4" ></video>
+                <div class="p-absolute">
+                        <div class="d-flex">
+                                <button type="button" id="previous25s">	
+                                        <i class="fas fa-backward"></i>
+                                </button>
+                                <button type="button" id="playButton">
+                                        <i class="fas fa-play"></i>
+                                </button>
+                                <button type="button" id="next25s">	
+                                        <i class="fas fa-forward"></i>
+                                </button>
+                                <div class="bar">
+                                    <div class="played-bar played">
+                                        <div class="hoverPlayer">
+        
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="gange-volume-group d-flex">
+                                    
+                                    <div class="bar">
+                                    <div class="played-bar" id="volumeRanger">
+                                        <div class="hoverPlayer">
+        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <select name="speed" id="speedSelect">
+                                    <option value="1">1x</option>
+                                    <option value="1.5">1.5x</option>
+                                    <option value="2">1.5x</option>
+                            </select>
+                        </div>
+                </div>
+                
+                
+
+        </div>
+        
     </div>
     
 </body>
