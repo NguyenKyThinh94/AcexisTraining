@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Slice in on scroll</title>
+</head>
+
+<body>
+    <style>
+        .container {
+            width: 65%;
+            max-width: 1000px;
+            height: fit-content;
+            margin: auto;
+            font-size: 20px;
+            background-color: darkgray;
+        }
+        img{
+            max-width: 100%;
+            transition: 0.5s;
+
+        }
+        .right{
+            transform: translateX(+200%);
+
+        }
+        .left{
+            transform: translateX(-200%);
+
+        }
+        .display{
+            transform: translateX(0%);
+        }
+    </style>
+    <div class="container">
+        <p class="">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores asperiores eos esse dicta eius quia ab
+            alias fuga
+            nisi. Ducimus officia incidunt corrupti maiores accusantium, molestias quae dolor soluta eos?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis aliquam distinctio earum omnis, tempora
+            voluptas
+            quos minus est adipisci exercitationem illo, aspernatur nostrum ipsa ea ab eaque quasi a quaerat.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores asperiores eos esse dicta eius quia ab
+            alias fuga nisi.
+            Ducimus officia incidunt corrupti maiores accusantium, molestias quae dolor soluta eos?
+            <img src="https://images.unsplash.com/photo-1500053275479-62fbd3dc2ae0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+                alt="" style="width: 400px; float: right; margin: 10px;"
+                class="right">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis aliquam distinctio earum omnis, tempora
+            voluptas quos
+            minus est adipisci exercitationem illo, aspernatur nostrum ipsa ea ab eaque quasi a quaerat.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi consequuntur, temporibus dolores quam dolore
+            vero dolor!
+            Sapiente, beatae. Fugiat earum molestiae, ipsam obcaecati dolorem rem corporis laborum expedita.
+            Repellendus, ad.
+        </p>
+        <p class="">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores asperiores eos esse dicta eius quia ab
+            alias fuga nisi.
+            Ducimus officia incidunt corrupti maiores accusantium, molestias quae dolor soluta eos?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis aliquam distinctio earum omnis, tempora
+            voluptas quos
+            minus est adipisci exercitationem illo, aspernatur nostrum ipsa ea ab eaque quasi a quaerat.
+
+        </p>
+        <p class="">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores asperiores eos esse dicta eius quia ab
+            alias fuga nisi.
+            Ducimus officia incidunt corrupti maiores accusantium, molestias quae dolor soluta eos?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis aliquam distinctio earum omnis, tempora
+            voluptas quos
+            minus est adipisci exercitationem illo, aspernatur nostrum ipsa ea ab eaque quasi a quaerat.
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid quia neque ab asperiores voluptatibus unde
+            itaque, tempore
+            vel laboriosam provident in. Dolorum dolorem rem ex eligendi praesentium asperiores magnam aut.
+            <img src="https://images.unsplash.com/photo-1500053275479-62fbd3dc2ae0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+                alt="" style="width: 400px; float: right; margin: 10px;" class="right">
+
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam corrupti, non quae deserunt quos obcaecati
+            rem laborum fugit,
+            unde consequuntur optio itaque culpa praesentium sunt inventore odio ullam perferendis odit!
+        </p>
+        <p class="">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores asperiores eos esse dicta eius quia ab
+            alias fuga nisi.
+            Ducimus officia incidunt corrupti maiores accusantium, molestias quae dolor soluta eos?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis aliquam distinctio earum omnis, tempora
+            voluptas quos
+            minus est adipisci exercitationem illo, aspernatur nostrum ipsa ea ab eaque quasi a quaerat.
+
+        </p>
+        <p class="">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores asperiores eos esse dicta eius quia ab
+            alias fuga nisi.
+            Ducimus officia incidunt corrupti maiores accusantium, molestias quae dolor soluta eos?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis aliquam distinctio earum omnis, tempora
+            voluptas quos
+            minus est adipisci exercitationem illo, aspernatur nostrum ipsa ea ab eaque quasi a quaerat.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores asperiores eos esse dicta eius quia ab
+            alias fuga nisi.
+            Ducimus officia incidunt corrupti maiores accusantium, molestias quae dolor soluta eos?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis aliquam distinctio earum omnis, tempora
+            voluptas quos
+            minus est adipisci exercitationem illo, aspernatur nostrum ipsa ea ab eaque quasi a quaerat.
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid quia neque ab asperiores voluptatibus unde
+            itaque, tempore
+            vel laboriosam provident in. Dolorum dolorem rem ex eligendi praesentium asperiores magnam aut.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam corrupti, non quae deserunt quos obcaecati
+            rem laborum fugit,
+            unde consequuntur optio itaque culpa praesentium sunt inventore odio ullam perferendis odit!
+        </p>
+        <p class="">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores asperiores eos esse dicta eius quia ab
+            alias fuga nisi.
+            Ducimus officia incidunt corrupti maiores accusantium, molestias quae dolor soluta eos?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis aliquam distinctio earum omnis, tempora
+            voluptas quos
+            minus est adipisci exercitationem illo, aspernatur nostrum ipsa ea ab eaque quasi a quaerat.
+
+        </p>
+        <p class="">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores asperiores eos esse dicta eius quia ab
+            alias fuga nisi.
+            Ducimus officia incidunt corrupti maiores accusantium, molestias quae dolor soluta eos?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis aliquam distinctio earum omnis, tempora
+            voluptas quos
+            minus est adipisci exercitationem illo, aspernatur nostrum ipsa ea ab eaque quasi a quaerat.
+
+        </p>
+        <p class="">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores asperiores eos esse dicta eius quia ab
+            alias fuga nisi.
+            Ducimus officia incidunt corrupti maiores accusantium, molestias quae dolor soluta eos?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis aliquam distinctio earum omnis, tempora
+            voluptas quos
+            minus est adipisci exercitationem illo, aspernatur nostrum ipsa ea ab eaque quasi a quaerat.
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid quia neque ab asperiores voluptatibus unde
+            itaque, tempore
+            vel laboriosam provident in. Dolorum dolorem rem ex eligendi praesentium asperiores magnam aut.
+            <img src="https://images.unsplash.com/photo-1500053275479-62fbd3dc2ae0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+                alt="" style="width: 400px; float: right; margin: 10px;" class="right">
+
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam corrupti, non quae deserunt quos obcaecati
+            rem laborum fugit,
+            unde consequuntur optio itaque culpa praesentium sunt inventore odio ullam perferendis odit!
+        </p>
+        <p class="">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores asperiores eos esse dicta eius quia ab
+            alias fuga nisi.
+            Ducimus officia incidunt corrupti maiores accusantium, molestias quae dolor soluta eos?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis aliquam distinctio earum omnis, tempora
+            voluptas quos
+            minus est adipisci exercitationem illo, aspernatur nostrum ipsa ea ab eaque quasi a quaerat.
+            <img src="https://images.unsplash.com/photo-1500053275479-62fbd3dc2ae0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+                alt="" style="width: 300px;float: left; margin: 10px;" class="left">
+
+
+        </p>
+        <p class="">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores asperiores eos esse dicta eius quia ab
+            alias fuga nisi.
+            Ducimus officia incidunt corrupti maiores accusantium, molestias quae dolor soluta eos?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis aliquam distinctio earum omnis, tempora
+            voluptas quos
+            minus est adipisci exercitationem illo, aspernatur nostrum ipsa ea ab eaque quasi a quaerat.
+            <p class="">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores asperiores eos esse dicta eius quia ab
+                alias fuga nisi.
+                Ducimus officia incidunt corrupti maiores accusantium, molestias quae dolor soluta eos?
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis aliquam distinctio earum omnis,
+                tempora voluptas quos
+                minus est adipisci exercitationem illo, aspernatur nostrum ipsa ea ab eaque quasi a quaerat.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid quia neque ab asperiores voluptatibus
+                unde itaque, tempore
+                vel laboriosam provident in. Dolorum dolorem rem ex eligendi praesentium asperiores magnam aut.
+                <img src="https://images.unsplash.com/photo-1500053275479-62fbd3dc2ae0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+                    alt="" style="width: 400px; float: right; margin: 10px;" class="right">
+
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam corrupti, non quae deserunt quos
+                obcaecati rem laborum fugit,
+                unde consequuntur optio itaque culpa praesentium sunt inventore odio ullam perferendis odit!
+            </p>
+            <p class="">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores asperiores eos esse dicta eius quia ab
+                alias fuga nisi.
+                Ducimus officia incidunt corrupti maiores accusantium, molestias quae dolor soluta eos?
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis aliquam distinctio earum omnis,
+                tempora voluptas quos
+                minus est adipisci exercitationem illo, aspernatur nostrum ipsa ea ab eaque quasi a quaerat.
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores asperiores eos esse dicta eius quia ab
+                alias fuga nisi.
+                Ducimus officia incidunt corrupti maiores accusantium, molestias quae dolor soluta eos?
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis aliquam distinctio earum omnis,
+                tempora voluptas quos
+                minus est adipisci exercitationem illo, aspernatur nostrum ipsa ea ab eaque quasi a quaerat.
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores asperiores eos esse dicta eius quia ab
+                alias fuga nisi.
+                Ducimus officia incidunt corrupti maiores accusantium, molestias quae dolor soluta eos?
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis aliquam distinctio earum omnis,
+                tempora voluptas quos
+                minus est adipisci exercitationem illo, aspernatur nostrum ipsa ea ab eaque quasi a quaerat.
+                <img src="https://images.unsplash.com/photo-1500053275479-62fbd3dc2ae0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+                    alt="" style="width: 400px; float: right; margin: 10px;" class="right">
+
+
+            </p>
+            <p class="">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores asperiores eos esse dicta eius quia ab
+                alias fuga nisi.
+                Ducimus officia incidunt corrupti maiores accusantium, molestias quae dolor soluta eos?
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis aliquam distinctio earum omnis,
+                tempora voluptas quos
+                minus est adipisci exercitationem illo, aspernatur nostrum ipsa ea ab eaque quasi a quaerat.
+                <p class="">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores asperiores eos esse dicta eius
+                    quia ab alias fuga nisi.
+                    Ducimus officia incidunt corrupti maiores accusantium, molestias quae dolor soluta eos?
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis aliquam distinctio earum omnis,
+                    tempora voluptas quos
+                    minus est adipisci exercitationem illo, aspernatur nostrum ipsa ea ab eaque quasi a quaerat.
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid quia neque ab asperiores
+                    voluptatibus unde itaque, tempore
+                    vel laboriosam provident in. Dolorum dolorem rem ex eligendi praesentium asperiores magnam aut.
+                    <img src="https://images.unsplash.com/photo-1500053275479-62fbd3dc2ae0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+                        alt="" style="width: 700px; float: left; margin: 10px;" class="left">
+
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam corrupti, non quae deserunt quos
+                    obcaecati rem laborum fugit,
+                    unde consequuntur optio itaque culpa praesentium sunt inventore odio ullam perferendis odit!
+                </p>
+                <p class="">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores asperiores eos esse dicta eius
+                    quia ab alias fuga nisi.
+                    Ducimus officia incidunt corrupti maiores accusantium, molestias quae dolor soluta eos?
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis aliquam distinctio earum omnis,
+                    tempora voluptas quos
+                    minus est adipisci exercitationem illo, aspernatur nostrum ipsa ea ab eaque quasi a quaerat.
+                    <img src="https://images.unsplash.com/photo-1500053275479-62fbd3dc2ae0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+                        alt="" style="width: 400px; float: right; margin: 10px;" class="right">
+
+
+                </p>
+                <p class="">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores asperiores eos esse dicta eius
+                    quia ab alias fuga nisi.
+                    Ducimus officia incidunt corrupti maiores accusantium, molestias quae dolor soluta eos?
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis aliquam distinctio earum omnis,
+                    tempora voluptas quos
+                    minus est adipisci exercitationem illo, aspernatur nostrum ipsa ea ab eaque quasi a quaerat.
+                    <p class="">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores asperiores eos esse dicta eius
+                        quia ab alias fuga nisi.
+                        Ducimus officia incidunt corrupti maiores accusantium, molestias quae dolor soluta eos?
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis aliquam distinctio earum
+                        omnis, tempora voluptas quos
+                        minus est adipisci exercitationem illo, aspernatur nostrum ipsa ea ab eaque quasi a quaerat.
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid quia neque ab asperiores
+                        voluptatibus unde itaque, tempore
+                        vel laboriosam provident in. Dolorum dolorem rem ex eligendi praesentium asperiores magnam aut.
+                        <img src="https://images.unsplash.com/photo-1500053275479-62fbd3dc2ae0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+                            alt="" style="width: 400px; float: left; margin: 10px;" class="left">
+
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam corrupti, non quae deserunt quos
+                        obcaecati rem laborum fugit,
+                        unde consequuntur optio itaque culpa praesentium sunt inventore odio ullam perferendis odit!
+                    </p>
+                    <p class="">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores asperiores eos esse dicta eius
+                        quia ab alias fuga nisi.
+                        Ducimus officia incidunt corrupti maiores accusantium, molestias quae dolor soluta eos?
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis aliquam distinctio earum
+                        omnis, tempora voluptas quos
+                        minus est adipisci exercitationem illo, aspernatur nostrum ipsa ea ab eaque quasi a quaerat.
+                        <img src="https://images.unsplash.com/photo-1500053275479-62fbd3dc2ae0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+                            alt="" style="width: 400px; float: right; margin: 10px;" class="right">
+
+
+                    </p>
+                    <p class="">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores asperiores eos esse dicta eius
+                        quia ab alias fuga nisi.
+                        Ducimus officia incidunt corrupti maiores accusantium, molestias quae dolor soluta eos?
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis aliquam distinctio earum
+                        omnis, tempora voluptas quos
+                        minus est adipisci exercitationem illo, aspernatur nostrum ipsa ea ab eaque quasi a quaerat.
+                        <p class="">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores asperiores eos esse dicta
+                            eius quia ab alias fuga nisi.
+                            Ducimus officia incidunt corrupti maiores accusantium, molestias quae dolor soluta eos?
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis aliquam distinctio
+                            earum omnis, tempora voluptas quos
+                            minus est adipisci exercitationem illo, aspernatur nostrum ipsa ea ab eaque quasi a quaerat.
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid quia neque ab asperiores
+                            voluptatibus unde itaque, tempore
+                            vel laboriosam provident in. Dolorum dolorem rem ex eligendi praesentium asperiores magnam
+                            aut.
+                            <img src="https://images.unsplash.com/photo-1500053275479-62fbd3dc2ae0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+                                alt="" style="width: 600px; float: left; margin: 10px;" class="left">
+
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam corrupti, non quae deserunt
+                            quos obcaecati rem laborum fugit,
+                            unde consequuntur optio itaque culpa praesentium sunt inventore odio ullam perferendis odit!
+                        </p>
+                        <p class="">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores asperiores eos esse dicta
+                            eius quia ab alias fuga nisi.
+                            Ducimus officia incidunt corrupti maiores accusantium, molestias quae dolor soluta eos?
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis aliquam distinctio
+                            earum omnis, tempora voluptas quos
+                            minus est adipisci exercitationem illo, aspernatur nostrum ipsa ea ab eaque quasi a quaerat.
+                            <img src="https://images.unsplash.com/photo-1500053275479-62fbd3dc2ae0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+                                alt="" style="width: 400px; float: right; margin: 10px;" class="right">
+
+
+                        </p>
+                        <p class="">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores asperiores eos esse dicta
+                            eius quia ab alias fuga nisi.
+                            Ducimus officia incidunt corrupti maiores accusantium, molestias quae dolor soluta eos?
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis aliquam distinctio
+                            earum omnis, tempora voluptas quos
+                            minus est adipisci exercitationem illo, aspernatur nostrum ipsa ea ab eaque quasi a quaerat.
+
+                        </p>
+                        <p class="">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores asperiores eos esse dicta
+                            eius quia ab alias fuga nisi.
+                            Ducimus officia incidunt corrupti maiores accusantium, molestias quae dolor soluta eos?
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis aliquam distinctio
+                            earum omnis, tempora voluptas quos
+                            minus est adipisci exercitationem illo, aspernatur nostrum ipsa ea ab eaque quasi a quaerat.
+
+                        </p>
+                        <p class="">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores asperiores eos esse dicta
+                            eius quia ab alias fuga nisi.
+                            Ducimus officia incidunt corrupti maiores accusantium, molestias quae dolor soluta eos?
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis aliquam distinctio
+                            earum omnis, tempora voluptas quos
+                            minus est adipisci exercitationem illo, aspernatur nostrum ipsa ea ab eaque quasi a quaerat.
+
+                        </p>
+                        <p class="">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores asperiores eos esse dicta
+                            eius quia ab alias fuga nisi.
+                            Ducimus officia incidunt corrupti maiores accusantium, molestias quae dolor soluta eos?
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis aliquam distinctio
+                            earum omnis, tempora voluptas quos
+                            minus est adipisci exercitationem illo, aspernatur nostrum ipsa ea ab eaque quasi a quaerat.
+
+                        </p>
+    </div>
+    <script>
+        let imagines=[...document.getElementsByTagName('img')];
+        console.log(imagines);
+        function displayImagine(event){
+            imagines.forEach((imagine) => {
+               let imagineStr=window.scrollY+window.innerHeight-imagine.height/2;
+               let imagineTop=imagine.offsetTop;
+               let imagineBottom=imagine.offsetTop+imagine.height;
+               if((imagineStr>=imagineTop)&&(window.scrollY<imagineBottom)){
+                imagine.classList.add('display');
+               } else{
+                imagine.classList.remove('display'); 
+               } 
+                
+               
+            });
+        }
+        function debounce(fn, delay, immediate) {
+            let timeout;
+
+            return function executedFn() {
+                let context = this; // "this" context của executedFn
+                let args = arguments; // "arguments" của fn
+
+                let later = function () {
+                    timeout = null;
+                    if (!immediate) fn.apply(context, args);
+                };
+
+                let callNow = immediate && !timeout;
+
+                clearTimeout(timeout);
+
+                timeout = setTimeout(later, delay);
+
+                if (callNow) fn.apply(context, args);
+            }
+        }
+        window.addEventListener('scroll',debounce(displayImagine,20,true))
+        displayImagine();
+    </script>
+
+</body>
+
+</html>
