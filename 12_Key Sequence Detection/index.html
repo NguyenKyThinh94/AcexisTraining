@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Key Sequence Detection</title>
+</head>
+<body>
+
+<script>
+const secretKey='thinh123';
+let keyup=[];
+
+window.addEventListener('keyup',(event)=>{
+    let index=keyup.length-secretKey.length;
+    if(index>=0){keyup.splice(0,1);}
+    keyup.push(event.key);
+    if(keyup.join('')===secretKey){
+        var myImage = new Image(1200, 696);
+        myImage.style.margin='auto';
+        myImage.src = 'https://res.cloudinary.com/wesbos/image/fetch/w_700,q_auto,f_auto/https://courses.wesbos.com/images/JS3-social-share.png';
+        document.body.appendChild(myImage);
+        
+    } else {
+        document.body.innerHTML='';
+    }
+    
+})
+
+</script>
+    
+</body>
+</html>
