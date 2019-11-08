@@ -3,6 +3,9 @@
     padding: 0%;
     box-sizing: border-box;
 }
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 .container{
     width: 85%;
     max-width: 1200px;
@@ -30,6 +33,7 @@ h1{
     width: 200px;
     margin: 10px 20px;
     justify-content: space-between;
+    font-style: italic;
 }
 [type="checkbox"]{
     display: none;
