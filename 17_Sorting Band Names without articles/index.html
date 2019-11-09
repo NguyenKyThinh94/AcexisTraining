@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sorting Band Names without articles</title>
+</head>
+<body>
+    <style>
+    </style>
+    <div class="container">
+        <ul class="list">
+        </ul>
+
+    </div>
+    <script>
+    const bands =['Daft Punk','The De La Soul','a Death Cab for Cutie','An Decemberists','AnDef Leppard','Devo',
+    'The Dillards','aDion and the Belmonts','Dire Straits','An Aixie Chicks','The Boors','The Drifters',
+    'a Eagles','Earth, Wind & Fire','Anmerson Lake & Palmer','The Everly Brothers','An Flamingo',
+    'Fleetwood Mac','An Zlying Burrito Brothers'] ;
+    const list = document.querySelector('.list');
+    function trimArticle(band){
+        return band.replace(/^(a |an |the )/i, '').trim();
+    }
+    function sortList(){
+        let sortedBands=bands.sort( (a,b)=>{
+        if(trimArticle(a.toLocaleLowerCase()) > trimArticle(b.toLocaleLowerCase())){
+            return 1;
+        } else {
+            return -1;
+        }
+            });
+         sortedBands=sortedBands.map( (band)=>  '<li> ' +band+'</li>' );
+         let   sortedBandsStr=sortedBands.join('');
+         list.innerHTML=sortedBandsStr;
+
+    }
+    sortList()
+  
+    
+    
+    </script>
+    
+</body>
+</html>
