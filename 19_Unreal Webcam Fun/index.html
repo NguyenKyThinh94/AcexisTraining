@@ -6,22 +6,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Unreal Webcam Fun</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
 </head>
 
 <body>
-    <style>
-        video{
-            width: 50px;
-            height: 50px;
-        }
-        #ouputInmage{
-            text-align: left;
-        }
-        </style>
-        <video id="videoWebcam" autoplay>Not supported in your brower</video>
-        <audio src="audio/mi.wav" id="snapAudio"></audio>
+    <video id="videoWebcam" autoplay>Not supported in your brower</video>
+    <audio src="audio/mi.wav" id="snapAudio"></audio>
     <center>
         <h1>Unreal Webcam Fun</h1>
+        <p>Press Shirft+Click to take photo !!</p>
+        <form action="">
+            <div class="left-input">
+                <div class="input-form">
+                    <label for="">Red min</label>
+                    <input type="range" min="1" max="256" value="50" class="inputrange" id="redMin">
+                </div>
+                <div class="input-form">
+                    <label for="">Green min</label>
+                    <input type="range" min="1" max="256" value="50" class="inputrange" id="greenMin">
+                </div>
+                <div class="input-form">
+                    <label for="">Blue min</label>
+                    <input type="range" min="1" max="256" value="50" class="inputrange" id="blueMin">
+                </div>
+            </div>
+            <div class="right-input">
+                <div class="input-form">
+                    <label for="">Red max</label>
+                    <input type="range" min="1" max="256" value="50" class="inputrange" id="redMax">
+                </div>
+                <div class="input-form">
+                    <label for="">Green max</label>
+                    <input type="range" min="1" max="256" value="50" class="inputrange" id="greenMax">
+                </div>
+                <div class="input-form">
+                    <label for="">Blue max</label>
+                    <input type="range" min="1" max="256" value="50" class="inputrange" id="blueMax">
+                </div>
+            </div>
+        </form>
+
+
         <canvas id="videoCanvas">
 
         </canvas>
@@ -29,73 +55,6 @@
 
         </div>
     </center>
-    <script>
-        const video = document.getElementById('videoWebcam');
-        const audio = document.getElementById('snapAudio');
-        const canvas = document.getElementById('videoCanvas');
-        const ouputInmage = document.getElementById('ouputInmage');
-        const ctx=canvas.getContext('2d');
-        const constraints = {
-            audio: false,
-            video: {
-                width: {
-                    ideal: 1000
-                },
-                height: {
-                    ideal: 500
-                }
-            }
-        }
-        function getVideo(){
-            navigator.mediaDevices.getUserMedia(constraints)
-            .then( (mediaStream) =>{
-                video.srcObject = mediaStream;
-                video.onloadedmetadata = function (e) {
-                    video.play();
-                };
-            })
-            .catch( (err) =>  console.log(err.name + ": " + err.message) );
-        }
-        function drawCanvas(){
-            const width=video.videoWidth;
-            const height=video.videoHeight;
-            canvas.width=width;
-            canvas.height=height;
-
-           const playcanvas=  setInterval( function(){
-                ctx.drawImage(video, 0 ,0 ,width, height);
-            },18)          
-        }
-
-        function takePhoto(event){
-           if(event.shiftKey){
-            audio.currentTime=0;
-            audio.play();
-            //clearInterval(playcanvas) ;
-            let photo = canvas.toDataURL('image/jpeg', 1.0);
-            let link= document.createElement('a');
-            let img=document.createElement('img');
-           
-            link.href=photo;
-            link.setAttribute('download','w3logo')
-            link.setAttribute('style','padding: 5px')
-            img.src=photo;
-            img.setAttribute('style','width: 100px;height: 50px;');
-
-            link.appendChild(img);
-
-            ouputInmage.appendChild(link);
-           }              
-        }
-        getVideo();
-
-
-        video.addEventListener('canplay',drawCanvas);
-        window.addEventListener('mousedown',takePhoto);
-        
-    </script>
-
-
 </body>
 
 </html>

@@ -1,0 +1,53 @@
+video{
+    width: 50px;
+    height: 50px;
+    display: none;
+}
+#ouputInmage{
+    width: 85%;
+    max-width: 1200px;
+    height: 80px;
+    margin: auto;
+    display: flex;
+   
+    text-align: left;
+    overflow: scroll;
+}
+.left-input, .right-input{
+    width: 50%;
+}
+form{
+    width: 85%;
+    max-width: 1200px;
+    display: flex;
+
+}
+.inputrange{
+-webkit-appearance: none; 
+appearance: none;
+height: 5px; 
+border-radius: 2px; 
+outline: none; 
+opacity: 0.7; 
+transition: .2s;
+background: linear-gradient(to left, #eee, #eee 50%, coral 50%);
+}
+.inputrange:hover{
+opacity: 1;  
+}
+.inputrange::-webkit-slider-thumb {
+-webkit-appearance: none; 
+appearance: none;
+width: 10px; 
+height: 15px; 
+border-radius: 5px; 
+background: coral; 
+cursor: pointer; 
+}
+.inputrange::-moz-range-thumb {
+width: 5px; 
+height: 20px; 
+background: coral; 
+border-radius: 5px; 
+cursor: pointer;
+} 
