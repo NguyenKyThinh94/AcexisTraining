@@ -2,6 +2,7 @@ const video = document.getElementById('videoWebcam');
 const audio = document.getElementById('snapAudio');
 const canvas = document.getElementById('videoCanvas');
 const ouputInmage = document.getElementById('ouputInmage');
+const inputs=[...document.querySelectorAll('input')]
 const ctx = canvas.getContext('2d');
 const constraints = {
     audio: false,
@@ -16,7 +17,11 @@ const constraints = {
 }
 
 function changeRangeInput(obj) {
-    obj.style.setProperty('background', 'linear-gradient(to left, #eee, #eee ' + (100 - obj.value) + '%, yellow ' + (100 - obj.value) + '%)');
+    let position=Math.floor((256 - parseInt(obj.value))/256*100)
+    obj.style.setProperty('background', 'linear-gradient(to left, #eee, #eee ' + position + '%, coral ' + position + '%)');
+}
+function changeRangeInputFNC(){
+    changeRangeInput(this);
 }
 
 function getVideo() {
@@ -49,6 +54,25 @@ function rgpSplit(pixels) {
     return pixels;
 
 }
+function setRgbMaxMin(pixels){
+    let dataMinMax=[];
+    dataMinMax=inputs.map( (input) => parseInt(input.value) );
+    for (i = 0; i < pixels.data.length; i += 4) {
+        let red = pixels.data[i + 0];
+        let green  = pixels.data[i + 1];
+        let blue = pixels.data[i + 2];
+        let anpha = pixels.data[i + 3];
+        let bettwen= (red<dataMinMax[0] || red>dataMinMax[3] ||green<dataMinMax[1] ||green>dataMinMax[4] || blue<dataMinMax[2] ||blue>dataMinMax[5]);
+        if(bettwen){
+            pixels.data[i + 3]=0;
+        }
+    }
+    return pixels;
+    
+}
+function router(){
+    
+}
 
 function drawCanvas() {
     const width = video.videoWidth;
@@ -59,7 +83,7 @@ function drawCanvas() {
     const playcanvas = setInterval(function () {
         ctx.drawImage(video, 0, 0, width, height);
         let pixels = ctx.getImageData(0, 0, width, height);
-        pixels = rgpSplit(pixels);
+        pixels = setRgbMaxMin(pixels);
         ctx.putImageData(pixels, 0, 0);
         ctx.globalAnpha = 0.8;
     }, 50)
@@ -90,3 +114,7 @@ getVideo();
 
 video.addEventListener('canplay', drawCanvas);
 window.addEventListener('mousedown', takePhoto);
+inputs.forEach( (input) =>{
+    changeRangeInput(input);
+    input.addEventListener('change', changeRangeInputFNC);
+})
